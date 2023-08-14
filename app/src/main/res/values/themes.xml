@@ -3,21 +3,7 @@
     <style name="Base.Theme.NbCamp_week4_assignment" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@android:color/holo_orange_dark</item>
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/black</item>
-        <item name="toolbarNavigationButtonStyle">@style/AppTheme.Actionbar</item>
-        <item name="android:actionOverflowButtonStyle">@style/AppTheme.OverFlow</item>
-
     </style>
-    <style name="AppTheme.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
-        <item name="android:tint">@color/yellow</item>
-    </style>
-
-    <style name="AppTheme.Actionbar" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="android:tint">@color/yellow</item>
-    </style>
-
 
     <style name="Theme.NbCamp_week4_assignment" parent="Base.Theme.NbCamp_week4_assignment" />
 </resources>
