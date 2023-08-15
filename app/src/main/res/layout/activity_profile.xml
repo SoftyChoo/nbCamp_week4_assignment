@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     tools:context=".ProfileActivity">
 
-
-    <ImageView
-        android:id="@+id/iv_profile_bg"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg_test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iv_profile"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="125dp"
-        android:background="@drawable/round_backgroud_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/iv_profile_bg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_profile_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="추민수"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="125dp"
+            android:background="@drawable/round_backgroud_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_profile_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="SoftyChoo"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_name" />
+        <TextView
+            android:id="@+id/tv_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="추민수"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
-    <TextView
-        android:id="@+id/tv_post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="Post"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_profile_id" />
+        <TextView
+            android:id="@+id/tv_profile_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="SoftyChoo"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name" />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_post">
+        <TextView
+            android:id="@+id/tv_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Post"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_id" />
 
         <ListView
             android:id="@+id/lv_post"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/post_item" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post"
+            tools:listitem="@layout/post_item">
+
+        </ListView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
 
 
