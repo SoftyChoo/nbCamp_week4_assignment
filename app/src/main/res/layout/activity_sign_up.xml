@@ -44,14 +44,14 @@
 
     <EditText
         android:id="@+id/editID"
-        android:layout_width="300dp"
+        android:layout_width="200dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:hint=" 아이디"
-        android:textStyle="bold"
-        android:textColorHint="#8C8C8C"
+        android:layout_marginEnd="100dp"
         android:background="@drawable/border"
-        android:layout_margin="15dp"
+        android:hint=" 아이디"
+        android:textColorHint="#8C8C8C"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editName" />
@@ -91,6 +91,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_signUp" />
+
+    <Button
+        android:id="@+id/btn_Check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:text="중복체크"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toEndOf="@+id/editID"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
