@@ -45,8 +45,8 @@ class PostAdaptor(val context: Context,var postList: ArrayList<Post>) :BaseAdapt
         val img_resourceId = context.resources.getIdentifier(post.img, "drawable", context.packageName)
         iv_post.setImageResource(profile_resourceId)
         iv_post_bg.setImageResource(img_resourceId)
-        tv_post_id.text = "Softychoo"
-        tv_post_name.text = "추민수"
+        tv_post_id.text = post.id
+        tv_post_name.text = post.user
         tv_post_content.text = post.content
 
         return view

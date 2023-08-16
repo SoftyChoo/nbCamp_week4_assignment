@@ -29,9 +29,6 @@ class SignInActivity : AppCompatActivity() {
                 val intentMain = Intent(this, MainActivity::class.java)
                 startActivity(intentMain)
             }
-//            test용 intent
-//            val test_intent = Intent(this,ProfileActivity::class.java)
-//            startActivity(test_intent)
         }
         btn2.setOnClickListener {//회원가입
             val intent = Intent(this, SignUpActivity::class.java)
