@@ -14,17 +14,12 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:baselineAlignBottom="false" />
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="5dp"
+
         android:orientation="horizontal"
         android:paddingBottom="10dp">
 
@@ -32,9 +27,13 @@
             android:id="@+id/rv_profile_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="horizontal"
-            />
+            android:scrollbars="horizontal" />
     </LinearLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:baselineAlignBottom="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +44,8 @@
             android:id="@+id/lv_post_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/post_item" />
+            android:divider="@color/white"
+            tools:listitem="@layout/card_item" />
     </LinearLayout>
 
 
