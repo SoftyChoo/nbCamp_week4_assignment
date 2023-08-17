@@ -13,13 +13,12 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbcamp_week4_assignment.DataClass.Post
+import com.example.nbcamp_week4_assignment.DataClass.User
 import com.example.nbcamp_week4_assignment.MainActivity
 import com.example.nbcamp_week4_assignment.ProfileActivity
 import com.example.nbcamp_week4_assignment.R
-class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>) :
+class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>) :
     RecyclerView.Adapter<ProfileAdaptor.ViewHolder>() {
-
-    lateinit var username :String
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
@@ -34,9 +33,6 @@ class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>
             imageButton.setOnClickListener {
                 val intentToProfile = Intent(it.context,ProfileActivity::class.java)
                 intentToProfile.putExtra("rv_userName",textView.text.toString())
-                //MainActivity에서 받아온 userId값을 Profile Activity로 넘겨줌
-//                val userId = MainActivity().getUserId()
-//                intentToProfile.putExtra(userId,"userId")
                 it.context.startActivity(intentToProfile)
             }
         }
@@ -54,18 +50,18 @@ class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
 
-        val post = postList[position]
+        val user = userList[position]
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.textView.text = post.user
+        viewHolder.textView.text = user.name
 
-        val resourceId = context.resources.getIdentifier(post.profile, "drawable", context.packageName)
+        val resourceId = context.resources.getIdentifier(user.img, "drawable", context.packageName)
         viewHolder.imageButton.setImageResource(resourceId)
 
     }
 
     // Return the size of your dataset (invoked by the layout manager)
-    override fun getItemCount() = postList.size
+    override fun getItemCount() = userList.size
 
 }
 

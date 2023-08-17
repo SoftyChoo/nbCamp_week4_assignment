@@ -13,6 +13,7 @@ import com.example.nbcamp_week4_assignment.Adaptor.PostAdaptor
 import com.example.nbcamp_week4_assignment.Adaptor.ProfileAdaptor
 import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.Object.PostObject
+import com.example.nbcamp_week4_assignment.Object.UserObject
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,12 +40,14 @@ class MainActivity : AppCompatActivity() {
         val postAdaptor = PostAdaptor(this, postList)
         postListView.adapter = postAdaptor
 
+        val userList = UserObject.readUser()
+
         //메인화면의 User목록을 InstagramStory 처럼 가로로 나타냄(Recyclerview)
         val postRecyclerView = findViewById<RecyclerView>(R.id.rv_profile_main)
 
         //RecyclerView 가로로 변환해주는 코드
         postRecyclerView.layoutManager =LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
-        val adapter = ProfileAdaptor(this, postList)
+        val adapter = ProfileAdaptor(this, userList)
         postRecyclerView.setAdapter(adapter)
 
 

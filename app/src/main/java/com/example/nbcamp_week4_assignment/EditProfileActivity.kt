@@ -67,10 +67,12 @@ class EditProfileActivity : AppCompatActivity() {
             intent.putExtra("name", name)
             intent.putExtra("id", id)
             startActivity(intent)
+            finish()
         }
         buttonCancel.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, ProfileActivity::class.java)
+//            startActivity(intent)
+            finish()
         }
     }
     private fun openGallery() {
