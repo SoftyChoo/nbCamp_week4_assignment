@@ -11,10 +11,10 @@ import android.widget.TextView
 import com.example.nbcamp_week4_assignment.Adaptor.PostAdaptor
 import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.Object.PostObject
+import com.example.nbcamp_week4_assignment.Object.UserObject
 
 
 class ProfileActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,26 +24,12 @@ class ProfileActivity : AppCompatActivity() {
         val profileName = findViewById<TextView>(R.id.tv_profile_name)
         val profileId = findViewById<TextView>(R.id.tv_profile_id)
 
-        img_profile.setImageResource(R.drawable.ms)//임시로
         img_profile.clipToOutline = true
-
-        // EditProfile 데이터
-        val imageUri: Uri? = intent.getParcelableExtra("imageUri")
-        imageUri?.let {
-            img_profile.setImageURI(it)
-        }
-        val inputName = intent.getStringExtra("name")
-        val nameText = findViewById<TextView>(R.id.tv_profile_name)
-        nameText.text = inputName
-        val inputId = intent.getStringExtra("id")
-        val idText = findViewById<TextView>(R.id.tv_profile_id)
-        idText.text = inputId
 
 
         //recyclerView를 클릭했을 때 받아온 유저의 이름
         var rv_userName = intent.getStringExtra("rv_userName")
-        //받아온 유저의 이름대로 바꿔줌
-        profileName.setText(rv_userName)
+
 
         //개인 postList 생성
         var personalList = arrayListOf<Post>()
@@ -55,19 +41,42 @@ class ProfileActivity : AppCompatActivity() {
         val postAdaptor = PostAdaptor(this, personalList)
         personalPost.adapter = postAdaptor
 
-        //porfile을 받아온 유저에 맞게 수정
-        var changeProfile = PostObject.personalImg(profileName.text.toString())
+        if( null !=UserObject.readUserName(rv_userName))
+        {
+            //받아온 유저의 이름대로 바꿔줌
+            profileName.setText(rv_userName)
 
-        val resourceId = this.resources.getIdentifier(changeProfile?.profile, "drawable", this.packageName)
-        img_profile.setImageResource(resourceId)
+            //profile을 받아온 유저에 맞게 수정
+            var changeProfile = PostObject.personalImg(profileName.text.toString())
 
-        profileId.setText(changeProfile?.id)
+            val resourceId = this.resources.getIdentifier(changeProfile?.profile, "drawable", this.packageName)
+            img_profile.setImageResource(resourceId)
+
+            profileId.setText(changeProfile?.id)
+        }
+        else{
+            // EditProfile 데이터
+            val imageUri: Uri? = intent.getParcelableExtra("imageUri")
+            imageUri?.let {
+                img_profile.setImageURI(it)
+            }
+            val inputName = intent.getStringExtra("name")
+            profileName.text = inputName
+            val inputId = intent.getStringExtra("id")
+            profileId.text = inputId
+        }
+
+
+
+
+
 
 
 
         btnEdit.setOnClickListener {
             val intenttoEditProfile = Intent(this, EditProfileActivity::class.java)
             startActivity(intenttoEditProfile)
+            finish()
         }
 
     }
