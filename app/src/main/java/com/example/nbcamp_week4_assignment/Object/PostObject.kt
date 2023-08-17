@@ -16,7 +16,6 @@ object PostObject {
         Post("@jh", "이진혁", "post_jh2", "jh", "사촌 조카\uD83D\uDE42"),
         Post("@hj", "김현준", "post_hj2", "hj", "횡령산에서"),
     )
-    var personalPostList = arrayListOf<Post>()
 
     fun addPost(
         id: String,
@@ -31,6 +30,17 @@ object PostObject {
 
     fun readPost(): ArrayList<Post> {
         return postList
+    }
+
+    fun personalPost(userName: String?, personalList: ArrayList<Post>): ArrayList<Post> {
+        for (post in postList) {
+            if (userName == post.user) {
+                personalList.add(post)
+            } else {
+                continue
+            }
+        }
+        return personalList
     }
 
 //    fun readPost(userName: String): Post? {

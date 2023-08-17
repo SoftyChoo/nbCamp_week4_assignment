@@ -1,6 +1,7 @@
 package com.example.nbcamp_week4_assignment.Adaptor
 
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +10,10 @@ import android.widget.BaseAdapter
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbcamp_week4_assignment.DataClass.Post
+import com.example.nbcamp_week4_assignment.ProfileActivity
 import com.example.nbcamp_week4_assignment.R
 class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>) :
     RecyclerView.Adapter<ProfileAdaptor.ViewHolder>() {
@@ -28,6 +31,11 @@ class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>
             textView = view.findViewById(R.id.tv_rv)
             imageButton = view.findViewById(R.id.ib_rv)
             imageButton.clipToOutline = true
+
+            imageButton.setOnClickListener {
+                val intentToProfile = Intent(it.context,ProfileActivity::class.java)
+                it.context.startActivity(intentToProfile)
+            }
         }
     }
 
