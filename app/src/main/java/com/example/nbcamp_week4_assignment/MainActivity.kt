@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowTitleEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
