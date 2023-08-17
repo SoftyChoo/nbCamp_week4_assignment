@@ -55,7 +55,7 @@ class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>
         // contents of the view with that element
         viewHolder.textView.text = user.name
 
-        val resourceId = context.resources.getIdentifier(user.img, "drawable", context.packageName)
+        val resourceId = context.resources.getIdentifier(user.imageUri, "drawable", context.packageName)
         viewHolder.imageButton.setImageResource(resourceId)
 
     }

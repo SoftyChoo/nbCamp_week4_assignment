@@ -5,14 +5,12 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import com.example.nbcamp_week4_assignment.DataClass.User
 import com.example.nbcamp_week4_assignment.Object.UserObject
 
 class SignUpActivity : AppCompatActivity() {

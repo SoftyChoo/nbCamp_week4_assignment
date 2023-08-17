@@ -35,7 +35,7 @@ class ProfileActivity : AppCompatActivity() {
         var personalList = arrayListOf<Post>()
 
         //Object에 개인List를 보내 받아온 유저의 이름과 같은 포스트 리스트만 받아옴
-        personalList = PostObject.personalPost(profileName.text.toString(),personalList)
+        personalList = PostObject.personalPost(rv_userName.toString(),personalList)
         val personalPost = findViewById<ListView>(R.id.lv_post)
 
         val postAdaptor = PostAdaptor(this, personalList)

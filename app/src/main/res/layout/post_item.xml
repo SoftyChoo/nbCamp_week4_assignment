@@ -36,7 +36,8 @@
         android:text=".Softychoo"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_post_name"
-        app:layout_constraintStart_toEndOf="@+id/tv_post_name" />
+        app:layout_constraintStart_toEndOf="@+id/tv_post_name"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/tv_post_content"
