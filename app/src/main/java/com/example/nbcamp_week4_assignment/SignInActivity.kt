@@ -22,6 +22,7 @@ class SignInActivity : AppCompatActivity() {
         btn1.setOnClickListener {//로그인
             if (UserObject.readusers(ID.text.toString(), Pass.text.toString())!=null) {
                 val intentMain = Intent(this, MainActivity::class.java)
+                intentMain.putExtra(ID.text.toString(),"userId")
                 startActivity(intentMain)
                 Toast.makeText(this,"로그인 되셨습니다.", Toast.LENGTH_SHORT).show()
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
@@ -29,6 +30,7 @@ class SignInActivity : AppCompatActivity() {
             else{
                 Toast.makeText(this,"회원이 아니시거나 아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
             }
+
         }
         btn2.setOnClickListener {//회원가입
             val intent = Intent(this, SignUpActivity::class.java)
