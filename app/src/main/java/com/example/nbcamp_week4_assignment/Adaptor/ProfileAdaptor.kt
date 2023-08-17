@@ -13,15 +13,14 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbcamp_week4_assignment.DataClass.Post
+import com.example.nbcamp_week4_assignment.MainActivity
 import com.example.nbcamp_week4_assignment.ProfileActivity
 import com.example.nbcamp_week4_assignment.R
 class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>) :
     RecyclerView.Adapter<ProfileAdaptor.ViewHolder>() {
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
+    lateinit var username :String
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
         val imageButton : ImageButton
@@ -34,6 +33,10 @@ class ProfileAdaptor(val context: Context, private val postList: ArrayList<Post>
 
             imageButton.setOnClickListener {
                 val intentToProfile = Intent(it.context,ProfileActivity::class.java)
+                intentToProfile.putExtra("rv_userName",textView.text.toString())
+                //MainActivity에서 받아온 userId값을 Profile Activity로 넘겨줌
+//                val userId = MainActivity().getUserId()
+//                intentToProfile.putExtra(userId,"userId")
                 it.context.startActivity(intentToProfile)
             }
         }
