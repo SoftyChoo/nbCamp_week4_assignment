@@ -10,7 +10,6 @@ object PostObject {
         Post("@jh", "이진혁", "post_jh1", "jh", "댕댕이 숙면"),
         Post("@hj", "김현준", "post_hj1", "hj", "맥주 한잔~"),
 
-
         Post("@softychoo", "추민수", "post_ms2", "ms", "오랜만에 일본여행!\uD83D\uDEE9️"),
         Post("@yh", "양윤혁", "post_yh2", "yh", "떨렸던 머리 올리기.."),
         Post("@de", "이다을", "post_de2", "de", "왜 다들 여기다가 보관하시는 거에요? \uD83D\uDE2E"),
