@@ -11,7 +11,8 @@ object UserObject {
         User("@hyyyjunk", "김현준", "333333"),
         User("@yhyang", "양윤혁", "444444")
     )
-    fun addPost(id: String, name: String, pw: String, )
+
+    fun adduser(id: String, name: String, pw: String, )
     {
         val newUser = User(id = id, name = name, pw = pw)
         users.add(newUser)
