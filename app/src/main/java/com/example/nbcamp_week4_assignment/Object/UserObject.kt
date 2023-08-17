@@ -5,7 +5,7 @@ import com.example.nbcamp_week4_assignment.DataClass.User
 
 object UserObject {
     var users = arrayListOf(
-        User("softychoo", "추민수", "000000"),
+        User("@softychoo", "추민수", "000000"),
         User("@jh4016", "이진혁", "111111"),
         User("@daeulzzang", "이다을", "222222"),
         User("@hyyyjunk", "김현준", "333333"),

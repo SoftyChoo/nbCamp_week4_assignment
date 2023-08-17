@@ -16,10 +16,14 @@ import com.example.nbcamp_week4_assignment.Object.PostObject
 
 
 class MainActivity : AppCompatActivity() {
+    //로그인 한 User의 Id값을 가지고있기
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val userId = intent.getStringExtra("userId")
 
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -49,4 +53,8 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
     }
+//    fun getUserId(): String? {
+//        return userId
+//    }
+
 }
