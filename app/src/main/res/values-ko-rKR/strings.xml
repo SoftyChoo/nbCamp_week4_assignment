@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">nbCamp_week4_assignment</string>
+    <string name="text1">텍스트1</string>
+    <string name="text2">텍스트2</string>
+    <string name="text3">텍스트3</string>
+    <string name="login">로그인</string>
+    <string name="signup">회원가입</string>
+    <string name="siginTitle">무한한 가능성 Inovate XI 입니다</string>
+    <string name="ID">아이디</string>
+    <string name="Password">비밀번호</string>
+    <string name="account">계정을 생성하세요</string>
+    <string name="name">이름</string>
+    <string name="check">중복체크</string>
+    <string name="cancel">취소</string>
+    <string name="update">수정하기</string>
+    <string name="checkId">사용 가능한 아이디 입니다</string>
+    <string name="checkId2">중복된 아이디 입니다 다른 아이디를 입력하세요.</string>
+    <string name="information">입력되지 않은 정보가 있습니다.</string>
+    <string name="complete">회원가입 완료</string>
+
+
+
+
+
+</resources>

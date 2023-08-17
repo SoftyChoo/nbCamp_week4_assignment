@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">nbCamp_week4_assignment</string>
+    <string name="text1">text1</string>
+    <string name="text2">tex2</string>
+    <string name="text3">text3</string>
+    <string name="login">login</string>
+    <string name="signup">signup</string>
+    <string name="siginTitle">This is Inovate XI</string>
+    <string name="ID"> ID</string>
+    <string name="Password"> Password</string>
+    <string name="account">Create new account</string>
+    <string name="name"> Name</string>
+    <string name="check">check ID</string>
+    <string name="cancel">Back</string>
+    <string name="update">Update</string>
+    <string name="checkId">You can use this ID</string>
+    <string name="checkId2">This ID is already taken. Please enter a different ID.</string>
+    <string name="information">Required Information is Missing</string>
+    <string name="complete">Your registration has been successful</string>
+
+
+
+</resources>
