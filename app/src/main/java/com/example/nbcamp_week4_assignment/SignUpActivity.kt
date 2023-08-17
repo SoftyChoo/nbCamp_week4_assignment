@@ -17,7 +17,6 @@ import com.example.nbcamp_week4_assignment.Object.UserObject
 
 class SignUpActivity : AppCompatActivity() {
     private var ImageUri: Uri? = null
-    private val PICK_IMAGE = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -31,6 +30,8 @@ class SignUpActivity : AppCompatActivity() {
         val editPW = findViewById<EditText>(R.id.editPW)
         var users = UserObject.readUser()
         val imageselect=findViewById<ImageView>(R.id.imageView2)
+        var checknum = 0
+
         imageselect.clipToOutline = true
         val pickImageLauncher: ActivityResultLauncher<Intent> =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -45,14 +46,14 @@ class SignUpActivity : AppCompatActivity() {
             }
 
         btn_Check.setOnClickListener {
-            var checknum = 0
+            checknum = 1
             for(i in users){
                 if(i.id == editID.text.toString().replace("\\s".toRegex(), "")){
                     Toast.makeText(this, "중복된 아이디 입니다 다른 아이디를 입력하세요.", Toast.LENGTH_SHORT).show()
-                    checknum = 1
+                    checknum = 0
                 }
             }
-            if(checknum == 0){
+            if(checknum == 1){
                 Toast.makeText(this, "사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show()
             }
         }
@@ -63,7 +64,12 @@ class SignUpActivity : AppCompatActivity() {
         btn_SignUp.setOnClickListener {
             if (editName.length() == 0 || editID.length() == 0 || editPW.length() == 0) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
-            } else {
+            }else if(checknum == 0){
+                Toast.makeText(this, "먼저 아이디 중복확인을 해주세요", Toast.LENGTH_SHORT).show()
+            }
+            else {
+
+                UserObject.adduser(editID.text.toString(),editName.text.toString(),editPW.text.toString(),ImageUri.toString())
 
                 Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
                 finish()

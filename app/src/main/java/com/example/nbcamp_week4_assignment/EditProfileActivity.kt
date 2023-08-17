@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import android.Manifest
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 
 class EditProfileActivity : AppCompatActivity() {
@@ -42,7 +43,6 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
 
-        title = "Edit Profile"
         imageView = findViewById(R.id.imgProfile)
         imageView.clipToOutline = true
         button = findViewById(R.id.btnProfile)
@@ -53,6 +53,24 @@ class EditProfileActivity : AppCompatActivity() {
             } else {
                 requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
             }
+        }
+        // 수정적용 or 취소
+        val buttonEdit = findViewById<Button>(R.id.button_edit)
+        val buttonCancel = findViewById<Button>(R.id.button_cancel)
+        val editName = findViewById<EditText>(R.id.editName)
+        val editId = findViewById<EditText>(R.id.editId)
+        buttonEdit.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            val name = editName.text.toString()
+            val id = editId.text.toString()
+            intent.putExtra("imageUri", imageUri)
+            intent.putExtra("name", name)
+            intent.putExtra("id", id)
+            startActivity(intent)
+        }
+        buttonCancel.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
     private fun openGallery() {

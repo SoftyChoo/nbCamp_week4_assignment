@@ -1,12 +1,13 @@
 package com.example.nbcamp_week4_assignment
 
 import android.content.Intent
+import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.example.nbcamp_week4_assignment.Adaptor.PostAdaptor
 import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.Object.PostObject
@@ -25,6 +26,18 @@ class ProfileActivity : AppCompatActivity() {
 
         img_profile.setImageResource(R.drawable.ms)//임시로
         img_profile.clipToOutline = true
+
+        // EditProfile 데이터
+        val imageUri: Uri? = intent.getParcelableExtra("imageUri")
+        imageUri?.let {
+            img_profile.setImageURI(it)
+        }
+        val inputName = intent.getStringExtra("name")
+        val nameText = findViewById<TextView>(R.id.tv_profile_name)
+        nameText.text = inputName
+        val inputId = intent.getStringExtra("id")
+        val idText = findViewById<TextView>(R.id.tv_profile_id)
+        idText.text = inputId
 
 
         //recyclerView를 클릭했을 때 받아온 유저의 이름
