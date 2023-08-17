@@ -17,18 +17,13 @@ class SignInActivity : AppCompatActivity() {
         val ID = findViewById<EditText>(R.id.editTextText)//아이디
         val Pass = findViewById<EditText>(R.id.editTextTextPassword)//비밀번호
 
-        val ms = User("softychoo","추민수","000000")
-        val jh = User("user1","이진혁","111111")
-        val de = User("user2","이다을","222222")
-        val hj = User("user3","김현준","333333")
-        val yh = User("user4","양윤혁","444444")
-
         btn1.setOnClickListener {//로그인
-//            if (Pass.text.toString().isNotEmpty() && ID.text.toString().isNotEmpty()) {
+            if (Pass.text.toString().isNotEmpty() && ID.text.toString().isNotEmpty()) {
                 val intentMain = Intent(this, MainActivity::class.java)
+                intentMain.putExtra(ID.text.toString(),"userId")
                 startActivity(intentMain)
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
-//            }
+            }
         }
         btn2.setOnClickListener {//회원가입
             val intent = Intent(this, SignUpActivity::class.java)
