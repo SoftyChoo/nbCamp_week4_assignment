@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.nbcamp_week4_assignment.DataClass.User
+import com.example.nbcamp_week4_assignment.Object.UserObject
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,12 +21,7 @@ class SignUpActivity : AppCompatActivity() {
         val editName = findViewById<EditText>(R.id.editName)
         val editID = findViewById<EditText>(R.id.editID)
         val editPW = findViewById<EditText>(R.id.editPW)
-        var users = listOf(
-            User("softychoo", "추민수", "000000"),
-            User("user1", "이진혁", "111111"),
-            User("user2", "이다을", "222222"),
-            User("user3", "김현준", "333333"),
-            User("user4", "양윤혁", "444444"))
+        var users = UserObject.readUser()
 
 
 
@@ -49,12 +45,13 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
                 finish()
+                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             }
         }
 
         btn_Cancel.setOnClickListener {
-
             finish()
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
         }
     }
 }

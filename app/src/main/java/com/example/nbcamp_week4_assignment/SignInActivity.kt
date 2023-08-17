@@ -28,11 +28,13 @@ class SignInActivity : AppCompatActivity() {
             if (Pass.text.toString().isNotEmpty() && ID.text.toString().isNotEmpty()) {
                 val intentMain = Intent(this, MainActivity::class.java)
                 startActivity(intentMain)
+                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             }
         }
         btn2.setOnClickListener {//회원가입
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
         }
     }
 }
