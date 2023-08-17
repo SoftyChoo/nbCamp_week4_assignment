@@ -29,4 +29,8 @@ object UserObject {
         }
         return null
     }
+
+    fun readUser(): ArrayList<User> {
+        return users
+    }
 }
