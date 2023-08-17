@@ -25,10 +25,10 @@ class SignInActivity : AppCompatActivity() {
         val yh = User("user4","양윤혁","444444")
 
         btn1.setOnClickListener {//로그인
-            if (Pass.text.toString().isNotEmpty() && ID.text.toString().isNotEmpty()) {
+//            if (Pass.text.toString().isNotEmpty() && ID.text.toString().isNotEmpty()) {
                 val intentMain = Intent(this, MainActivity::class.java)
                 startActivity(intentMain)
-            }
+//            }
         }
         btn2.setOnClickListener {//회원가입
             val intent = Intent(this, SignUpActivity::class.java)
