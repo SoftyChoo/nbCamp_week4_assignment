@@ -25,7 +25,7 @@ class PostAdaptor(val context: Context,var postList: ArrayList<Post>) :BaseAdapt
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         /* LayoutInflater는 item을 Adapter에서 사용할 View로 부풀려주는(inflate) 역할을 한다. */
-        val view: View = LayoutInflater.from(context).inflate(R.layout.post_item, null)
+        val view: View = LayoutInflater.from(context).inflate(R.layout.card_item, null)
 
         /* 위에서 생성된 view를 res-layout-main_lv_item.xml 파일의 각 View와 연결하는 과정이다. */
         val iv_post = view.findViewById<ImageView>(R.id.iv_post)
