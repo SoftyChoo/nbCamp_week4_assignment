@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp" >
+
+            <ImageView
+                android:id="@+id/imgBg"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:background="@color/black" />
+
+            <Button
+                android:id="@+id/btnBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignStart="@+id/imgBg"
+                android:layout_alignTop="@+id/imgBg"
+                android:layout_alignEnd="@+id/imgBg"
+                android:layout_alignBottom="@+id/imgBg"
+                android:layout_alignParentStart="true"
+                android:background="@android:color/transparent"
+                android:text="edit" />
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="120dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/round_backgroud_profile"
+                android:scaleType="centerCrop" />
+
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/imgProfile"
+                android:layout_alignTop="@+id/imgProfile"
+                android:layout_alignEnd="@+id/imgProfile"
+                android:layout_alignBottom="@+id/imgProfile"
+                android:text="edit"
+                android:background="@android:color/transparent"/>
+
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box_border"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="15dp"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/box_border"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="15dp"
+            android:hint="ID" />
+
+        <Button
+            android:id="@+id/button_edit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="수정하기"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_shape"
+            android:layout_margin="20dp" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="취소"
+            android:background="@drawable/btn_whtite"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
