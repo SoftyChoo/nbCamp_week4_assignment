@@ -68,7 +68,9 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "먼저 아이디 중복확인을 해주세요", Toast.LENGTH_SHORT).show()
             }
             else {
+
                 UserObject.adduser(editID.text.toString(),editName.text.toString(),editPW.text.toString(),ImageUri.toString())
+
                 Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
                 finish()
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
