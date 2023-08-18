@@ -7,10 +7,10 @@
     <string name="login">login</string>
     <string name="signup">signup</string>
     <string name="siginTitle">Inovate XI</string>
-    <string name="ID"> ID</string>
-    <string name="Password"> Password</string>
+    <string name="ID">&#160;Input ID</string>
+    <string name="Password">&#160;Input Password</string>
     <string name="account">Create new account</string>
-    <string name="name"> Name</string>
+    <string name="name">&#160;Input Name</string>
     <string name="check">check ID</string>
     <string name="cancel">Back</string>
     <string name="update">Update</string>

@@ -10,19 +10,21 @@
 
     <Button
         android:id="@+id/main_btn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="main"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_shape"
+        android:text="home"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile_bg" />
 
     <ImageView
         android:id="@+id/iv_profile_bg"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:scaleType="centerCrop"
         android:background="#282828"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,8 +35,8 @@
         android:layout_height="130dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="115dp"
-        android:scaleType="centerCrop"
         android:background="@drawable/round_backgroud_profile"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,12 +44,11 @@
         android:id="@+id/btn_edit_profile"
         android:layout_width="120dp"
         android:layout_height="35dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_margin="10dp"
         android:background="@drawable/btn_whtite"
         android:text="Edit Profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile_bg"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView

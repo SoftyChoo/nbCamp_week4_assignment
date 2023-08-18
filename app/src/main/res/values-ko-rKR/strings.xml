@@ -7,10 +7,10 @@
     <string name="login">로그인</string>
     <string name="signup">회원가입</string>
     <string name="siginTitle">Inovate XI</string>
-    <string name="ID">아이디</string>
-    <string name="Password">비밀번호</string>
+    <string name="ID">&#160;아이디를 입력해주세요.</string>
+    <string name="Password">&#160;비밀번호를 입력해주세요.</string>
     <string name="account">계정을 생성하세요</string>
-    <string name="name">이름</string>
+    <string name="name">&#160;이름을 입력해주세요.</string>
     <string name="check">중복체크</string>
     <string name="cancel">취소</string>
     <string name="update">수정하기</string>
