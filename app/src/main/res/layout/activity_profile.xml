@@ -20,6 +20,19 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_profile_bg"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <Button
+        android:id="@+id/btn_addPost"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_shape"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
     <ImageView
         android:id="@+id/iv_profile_bg"
         android:layout_width="match_parent"
