@@ -5,7 +5,7 @@
     <string name="text3">text3text3text3text3text3text3text3text3text3text3\ntext3text3text3text3text3text3text3text3text3text3\ntext3text3text3text3text3text3text3text3text3text3\ntext3text3text3text3text3text3text3text3text3text3\ntext3text3text3text3text3text3text3text3text3text3</string>
     <string name="login">로그인</string>
     <string name="signup">회원가입</string>
-    <string name="siginTitle">Inovate XI</string>
+    <string name="siginTitle">Innovate XI</string>
     <string name="ID">&#160;아이디를 입력해주세요.</string>
     <string name="Password">&#160;비밀번호를 입력해주세요.</string>
     <string name="account">계정을 생성하세요</string>

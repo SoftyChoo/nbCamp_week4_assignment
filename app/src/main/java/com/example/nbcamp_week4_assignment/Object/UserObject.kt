@@ -1,6 +1,7 @@
 package com.example.nbcamp_week4_assignment.Object
 
 import android.net.Uri
+import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.DataClass.User
 import com.example.nbcamp_week4_assignment.R
 
@@ -49,7 +50,7 @@ object UserObject {
     fun editProfile(imageUri: String, name: String, id: String,compareName:String) {
         for (user in users) {
             if (user.name == compareName) {
-                user.imageUri = imageUri
+                user.imageUri = "test"
                 user.name = name
                 user.id = id
                 break
@@ -67,5 +68,14 @@ object UserObject {
             }
         }
     }
-
+    fun personalImg(userName: String?): User? {
+        for (user in users) {
+            if (userName == user.name) {
+                return user
+            } else {
+                continue
+            }
+        }
+        return null
+    }
 }

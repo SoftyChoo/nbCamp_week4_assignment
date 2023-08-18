@@ -47,20 +47,27 @@ class ProfileActivity : AppCompatActivity() {
 
         if( null !=UserObject.readUserName(rv_userName))
         {
-            //Object에 개인List를 보내 받아온 유저의 이름과 같은 포스트 리스트만 받아옴
-            personalList = PostObject.personalPost(rv_userName.toString(),personalList)
-            val personalPost = findViewById<ListView>(R.id.lv_post)
+            //post가 있을때만 받아옴
+            if(PostObject.checkPost(rv_userName) == true){
+                //Object에 개인List를 보내 받아온 유저의 이름과 같은 포스트 리스트만 받아옴
+                personalList = PostObject.personalPost(rv_userName,personalList)
+                val personalPost = findViewById<ListView>(R.id.lv_post)
 
-            val postAdaptor = PostAdaptor(this, personalList)
-            personalPost.adapter = postAdaptor
-
+                val postAdaptor = PostAdaptor(this, personalList)
+                personalPost.adapter = postAdaptor
+            }
+            else
+            {
+                val postState = findViewById<TextView>(R.id.tv_postState)
+                postState.setText("No Post")
+            }
             //받아온 유저의 이름대로 바꿔줌
             profileName.setText(rv_userName)
 
             //profile을 받아온 유저에 맞게 수정
-            var changeProfile = PostObject.personalImg(profileName.text.toString())
+            var changeProfile = UserObject.personalImg(profileName.text.toString())
 
-            val resourceId = this.resources.getIdentifier(changeProfile?.profile, "drawable", this.packageName)
+            val resourceId = this.resources.getIdentifier(changeProfile?.imageUri.toString(), "drawable", this.packageName)
             img_profile.setImageResource(resourceId)
 
             profileId.setText(changeProfile?.id)
@@ -73,13 +80,19 @@ class ProfileActivity : AppCompatActivity() {
             img_profile.setImageURI(imageUri)
             profileName.text = inputName
             profileId.text = inputId
+            if(PostObject.checkPost(inputName.toString()) == true){
+                personalList = PostObject.personalPost(inputName.toString(),personalList)
+                val personalPost = findViewById<ListView>(R.id.lv_post)
 
-            personalList = PostObject.personalPost(inputName.toString(),personalList)
-            val personalPost = findViewById<ListView>(R.id.lv_post)
-
-            val postAdaptor = PostAdaptor(this, personalList)
-            personalPost.adapter = postAdaptor
+                val postAdaptor = PostAdaptor(this, personalList)
+                personalPost.adapter = postAdaptor
+            }
+            else {
+                val postState = findViewById<TextView>(R.id.tv_postState)
+                postState.setText("No Post")
+            }
         }
+
 
         btnEdit.setOnClickListener {
             val intenttoEditProfile = Intent(this, EditProfileActivity::class.java)
