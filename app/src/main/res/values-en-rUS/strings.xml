@@ -18,6 +18,10 @@
     <string name="checkId2">This ID is already taken. Please enter a different ID.</string>
     <string name="information">Required Information is Missing</string>
     <string name="complete">Your registration has been successful</string>
+    <string name="member">please check your ID and password.</string>
+    <string name="check2">You have to check your ID</string>
+
+
 
 
 

@@ -18,9 +18,8 @@
     <string name="checkId2">중복된 아이디 입니다 다른 아이디를 입력하세요.</string>
     <string name="information">입력되지 않은 정보가 있습니다.</string>
     <string name="complete">회원가입 완료</string>
-
-
-
+    <string name="member">회원이 아니시거나 아이디와 비밀번호를 확인해주세요.</string>
+    <string name="check2">먼저 아이디 중복확인을 해주세요</string>
 
 
 </resources>
