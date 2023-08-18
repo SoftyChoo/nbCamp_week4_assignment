@@ -46,7 +46,7 @@ object PostObject {
     fun editPostData(imageUri: String, name: String, id: String,compareName:String) {
         for (post in postList) {
             if (post.user == compareName) {
-                post.profile = imageUri
+                post.profile = "test"
                 post.user = name
                 post.id = id
             }
