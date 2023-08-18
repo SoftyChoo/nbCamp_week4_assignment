@@ -76,11 +76,13 @@ class EditProfileActivity : AppCompatActivity() {
             Intent.putExtra("id", id)
 
             startActivity(Intent)
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
         }
         buttonCancel.setOnClickListener {
 //            val intent = Intent(this, ProfileActivity::class.java)
 //            startActivity(intent)
             finish()
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
         }
     }
     private fun openGallery() {
