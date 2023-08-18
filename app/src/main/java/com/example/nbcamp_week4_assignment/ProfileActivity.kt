@@ -29,21 +29,23 @@ class ProfileActivity : AppCompatActivity() {
 
 
         //recyclerView를 클릭했을 때 받아온 유저의 이름
-        var rv_userName = intent.getStringExtra("name")
+        var rv_userName = intent.getStringExtra("rv_name")
 
 
         //개인 postList 생성
         var personalList = arrayListOf<Post>()
 
-        //Object에 개인List를 보내 받아온 유저의 이름과 같은 포스트 리스트만 받아옴
-        personalList = PostObject.personalPost(rv_userName.toString(),personalList)
-        val personalPost = findViewById<ListView>(R.id.lv_post)
 
-        val postAdaptor = PostAdaptor(this, personalList)
-        personalPost.adapter = postAdaptor
 
         if( null !=UserObject.readUserName(rv_userName))
         {
+            //Object에 개인List를 보내 받아온 유저의 이름과 같은 포스트 리스트만 받아옴
+            personalList = PostObject.personalPost(rv_userName.toString(),personalList)
+            val personalPost = findViewById<ListView>(R.id.lv_post)
+
+            val postAdaptor = PostAdaptor(this, personalList)
+            personalPost.adapter = postAdaptor
+
             //받아온 유저의 이름대로 바꿔줌
             profileName.setText(rv_userName)
 
@@ -63,11 +65,18 @@ class ProfileActivity : AppCompatActivity() {
             img_profile.setImageURI(imageUri)
             profileName.text = inputName
             profileId.text = inputId
+
+            personalList = PostObject.personalPost(inputName.toString(),personalList)
+            val personalPost = findViewById<ListView>(R.id.lv_post)
+
+            val postAdaptor = PostAdaptor(this, personalList)
+            personalPost.adapter = postAdaptor
         }
+
         btnEdit.setOnClickListener {
             val intenttoEditProfile = Intent(this, EditProfileActivity::class.java)
+            intenttoEditProfile.putExtra("rv_name",rv_userName)
             startActivity(intenttoEditProfile)
-            finish()
         }
         main_btn.setOnClickListener {
             val intenttoEditProfile = Intent(this, MainActivity::class.java)

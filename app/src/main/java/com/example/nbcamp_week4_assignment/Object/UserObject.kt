@@ -47,9 +47,9 @@ object UserObject {
         return users
     }
 
-    fun editProfile(imageUri: String, name: String, id: String) {
+    fun editProfile(imageUri: String, name: String, id: String,compareName:String) {
         for (user in users) {
-            if (user.id == id) {
+            if (user.name == compareName) {
                 user.imageUri = imageUri
                 user.name = name
                 user.id = id
@@ -57,5 +57,7 @@ object UserObject {
             }
         }
     }
+
+
 
 }

@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import android.Manifest
 import android.widget.Button
 import android.widget.EditText
+import com.example.nbcamp_week4_assignment.Object.PostObject
 import com.example.nbcamp_week4_assignment.Object.UserObject.editProfile
 
 class EditProfileActivity : AppCompatActivity() {
@@ -64,8 +65,10 @@ class EditProfileActivity : AppCompatActivity() {
             val name = editName.text.toString()
             val id = editId.text.toString()
             val imageUri = imageUri
+            var compareName = intent.getStringExtra("rv_name").toString()
             // 사용자 정보 수정 및 전달
-            editProfile(imageUri.toString(), name, id)
+            editProfile(imageUri.toString(), name, id,compareName)
+            PostObject.editPostData(imageUri.toString(),name,id,compareName)
 
             val Intent = Intent(this, ProfileActivity::class.java)
             Intent.putExtra("imageUri", imageUri)
