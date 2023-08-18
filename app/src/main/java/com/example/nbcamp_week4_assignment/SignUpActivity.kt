@@ -47,12 +47,12 @@ class SignUpActivity : AppCompatActivity() {
             checknum = 1
             for(i in users){
                 if(i.id == editID.text.toString().replace("\\s".toRegex(), "")){
-                    Toast.makeText(this, "중복된 아이디 입니다 다른 아이디를 입력하세요.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.checkId2), Toast.LENGTH_SHORT).show()
                     checknum = 0
                 }
             }
             if(checknum == 1){
-                Toast.makeText(this, "사용가능한 아이디 입니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.checkId), Toast.LENGTH_SHORT).show()
             }
         }
         btn_profile.setOnClickListener {
@@ -61,15 +61,15 @@ class SignUpActivity : AppCompatActivity() {
         }
         btn_SignUp.setOnClickListener {
             if (editName.length() == 0 || editID.length() == 0 || editPW.length() == 0) {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.information), Toast.LENGTH_SHORT).show()
             }else if(checknum == 0){
-                Toast.makeText(this, "먼저 아이디 중복확인을 해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.check2), Toast.LENGTH_SHORT).show()
             }
             else {
 
                 UserObject.adduser(editID.text.toString(),editName.text.toString(),editPW.text.toString(),ImageUri.toString())
 
-                Toast.makeText(this, "회원가입 완료", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.complete), Toast.LENGTH_SHORT).show()
                 finish()
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             }

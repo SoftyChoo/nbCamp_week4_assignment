@@ -24,11 +24,11 @@ class SignInActivity : AppCompatActivity() {
                 val intentMain = Intent(this, MainActivity::class.java)
                 intentMain.putExtra(ID.text.toString(),"userId")
                 startActivity(intentMain)
-                Toast.makeText(this,"로그인 되셨습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show()
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             }
             else{
-                Toast.makeText(this,"회원이 아니시거나 아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,getString(R.string.member), Toast.LENGTH_SHORT).show()
             }
 
         }
