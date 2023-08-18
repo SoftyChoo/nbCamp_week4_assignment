@@ -1,5 +1,6 @@
 package com.example.nbcamp_week4_assignment.Adaptor
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.media.Image
@@ -34,6 +35,7 @@ class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>
                 val intentToProfile = Intent(it.context,ProfileActivity::class.java)
                 intentToProfile.putExtra("name",textView.text.toString())
                 it.context.startActivity(intentToProfile)
+                (view.context as Activity).overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             }
         }
     }
