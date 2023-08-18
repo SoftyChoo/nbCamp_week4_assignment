@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import android.Manifest
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
+import com.example.nbcamp_week4_assignment.Object.UserObject.editProfile
 
 class EditProfileActivity : AppCompatActivity() {
 
@@ -59,15 +59,20 @@ class EditProfileActivity : AppCompatActivity() {
         val buttonCancel = findViewById<Button>(R.id.button_cancel)
         val editName = findViewById<EditText>(R.id.editName)
         val editId = findViewById<EditText>(R.id.editId)
+
         buttonEdit.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
             val name = editName.text.toString()
             val id = editId.text.toString()
-            intent.putExtra("imageUri", imageUri)
-            intent.putExtra("name", name)
-            intent.putExtra("id", id)
-            startActivity(intent)
-            finish()
+            val imageUri = imageUri
+            // 사용자 정보 수정 및 전달
+            editProfile(imageUri.toString(), name, id)
+
+            val Intent = Intent(this, ProfileActivity::class.java)
+            Intent.putExtra("imageUri", imageUri)
+            Intent.putExtra("name", name)
+            Intent.putExtra("id", id)
+
+            startActivity(Intent)
         }
         buttonCancel.setOnClickListener {
 //            val intent = Intent(this, ProfileActivity::class.java)

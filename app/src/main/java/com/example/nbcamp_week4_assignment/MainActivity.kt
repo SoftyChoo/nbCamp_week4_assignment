@@ -1,6 +1,8 @@
 package com.example.nbcamp_week4_assignment
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
@@ -14,6 +16,7 @@ import com.example.nbcamp_week4_assignment.Adaptor.ProfileAdaptor
 import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.Object.PostObject
 import com.example.nbcamp_week4_assignment.Object.UserObject
+import com.example.nbcamp_week4_assignment.Object.UserObject.editProfile
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,8 +33,13 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        supportActionBar!!.setDisplayShowTitleEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
+    }
 
+    override fun onStart() {
+        super.onStart()
         //Object에서 리스트를 받아옴
         val postList = PostObject.readPost()
 
@@ -49,12 +57,6 @@ class MainActivity : AppCompatActivity() {
         postRecyclerView.layoutManager =LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
         val adapter = ProfileAdaptor(this, userList)
         postRecyclerView.setAdapter(adapter)
-
-
-
-        supportActionBar!!.setDisplayShowTitleEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-
     }
 //    fun getUserId(): String? {
 //        return userId

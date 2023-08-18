@@ -47,4 +47,15 @@ object UserObject {
         return users
     }
 
+    fun editProfile(imageUri: String, name: String, id: String) {
+        for (user in users) {
+            if (user.id == id) {
+                user.imageUri = imageUri
+                user.name = name
+                user.id = id
+                break
+            }
+        }
+    }
+
 }
