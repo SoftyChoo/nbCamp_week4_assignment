@@ -17,6 +17,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btn_addPost"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_shape"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_post" />
+
+    <Button
         android:id="@+id/main_btn"
         android:layout_width="120dp"
         android:layout_height="35dp"
@@ -88,7 +101,7 @@
             android:id="@+id/lv_post"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/post_item" />
+            tools:listitem="@layout/card_item" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
