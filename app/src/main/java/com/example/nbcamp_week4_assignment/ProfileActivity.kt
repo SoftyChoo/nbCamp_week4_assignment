@@ -23,12 +23,13 @@ class ProfileActivity : AppCompatActivity() {
         val btnEdit = findViewById<Button>(R.id.btn_edit_profile)
         val profileName = findViewById<TextView>(R.id.tv_profile_name)
         val profileId = findViewById<TextView>(R.id.tv_profile_id)
+        val main_btn = findViewById<Button>(R.id.main_btn)
 
         img_profile.clipToOutline = true
 
 
         //recyclerView를 클릭했을 때 받아온 유저의 이름
-        var rv_userName = intent.getStringExtra("rv_userName")
+        var rv_userName = intent.getStringExtra("name")
 
 
         //개인 postList 생성
@@ -55,29 +56,23 @@ class ProfileActivity : AppCompatActivity() {
             profileId.setText(changeProfile?.id)
         }
         else{
-            // EditProfile 데이터
-            val imageUri: Uri? = intent.getParcelableExtra("imageUri")
-            imageUri?.let {
-                img_profile.setImageURI(it)
-            }
+            // 수정된 정보 화면 표시
+            val imageUri = intent.getParcelableExtra<Uri>("imageUri")
             val inputName = intent.getStringExtra("name")
-            profileName.text = inputName
             val inputId = intent.getStringExtra("id")
+            img_profile.setImageURI(imageUri)
+            profileName.text = inputName
             profileId.text = inputId
         }
-
-
-
-
-
-
-
-
         btnEdit.setOnClickListener {
             val intenttoEditProfile = Intent(this, EditProfileActivity::class.java)
             startActivity(intenttoEditProfile)
             finish()
         }
-
+        main_btn.setOnClickListener {
+            val intenttoEditProfile = Intent(this, MainActivity::class.java)
+            startActivity(intenttoEditProfile)
+            finish()
+        }
     }
 }

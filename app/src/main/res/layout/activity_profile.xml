@@ -8,6 +8,14 @@
     android:fillViewport="true"
     tools:context=".ProfileActivity">
 
+    <Button
+        android:id="@+id/main_btn"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_profile_bg"

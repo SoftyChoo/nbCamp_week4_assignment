@@ -32,7 +32,7 @@ class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>
 
             imageButton.setOnClickListener {
                 val intentToProfile = Intent(it.context,ProfileActivity::class.java)
-                intentToProfile.putExtra("rv_userName",textView.text.toString())
+                intentToProfile.putExtra("name",textView.text.toString())
                 it.context.startActivity(intentToProfile)
             }
         }
