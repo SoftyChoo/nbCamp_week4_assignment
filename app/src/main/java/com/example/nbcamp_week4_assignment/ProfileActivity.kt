@@ -77,10 +77,12 @@ class ProfileActivity : AppCompatActivity() {
             val intenttoEditProfile = Intent(this, EditProfileActivity::class.java)
             intenttoEditProfile.putExtra("rv_name",rv_userName)
             startActivity(intenttoEditProfile)
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
         }
         main_btn.setOnClickListener {
             val intenttoEditProfile = Intent(this, MainActivity::class.java)
             startActivity(intenttoEditProfile)
+            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             finish()
         }
     }
