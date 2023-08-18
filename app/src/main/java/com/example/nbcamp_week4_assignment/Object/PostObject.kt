@@ -61,5 +61,13 @@ object PostObject {
         }
         return false
     }
-//    fun get
+    fun addPostCheck(userName :String): Post? {
+        for (post in postList) {
+            if (post.user == userName) {
+                return post
+            }
+        }
+        return null
+
+    }
 }

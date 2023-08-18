@@ -25,6 +25,7 @@ class ProfileActivity : AppCompatActivity() {
         val profileName = findViewById<TextView>(R.id.tv_profile_name)
         val profileId = findViewById<TextView>(R.id.tv_profile_id)
         val main_btn = findViewById<Button>(R.id.main_btn)
+        val btnAddPost = findViewById<Button>(R.id.btn_addPost)
 
         img_profile.clipToOutline = true
 
@@ -34,10 +35,12 @@ class ProfileActivity : AppCompatActivity() {
         //SignIn한 유저의 프로필에서만 EditProfile버튼이 활성화되도록 설정
         if(rv_userName == UserObject.signInUser){
             btnEdit.visibility = View.VISIBLE
+            btnAddPost.visibility = View.VISIBLE
         }
         else
         {
             btnEdit.visibility = View.GONE
+            btnAddPost.visibility = View.GONE
         }
 
         //개인 postList 생성
@@ -95,17 +98,22 @@ class ProfileActivity : AppCompatActivity() {
 
 
         btnEdit.setOnClickListener {
-            val intenttoEditProfile = Intent(this, EditProfileActivity::class.java)
-            intenttoEditProfile.putExtra("rv_name",rv_userName)
-            startActivity(intenttoEditProfile)
+            val intentToEditProfile = Intent(this, EditProfileActivity::class.java)
+            intentToEditProfile.putExtra("rv_name",rv_userName)
+            startActivity(intentToEditProfile)
             overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             finish()
         }
         main_btn.setOnClickListener {
-            val intenttoEditProfile = Intent(this, MainActivity::class.java)
-            startActivity(intenttoEditProfile)
+            val intenToMain = Intent(this, MainActivity::class.java)
+            startActivity(intenToMain)
             overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             finish()
+        }
+        btnAddPost.setOnClickListener{
+            val intentToAddPost = Intent(this, AddPostActivity::class.java)
+            intentToAddPost.putExtra("rv_userName",rv_userName)
+            startActivity(intentToAddPost)
         }
     }
 }
