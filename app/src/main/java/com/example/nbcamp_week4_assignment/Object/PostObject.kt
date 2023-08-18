@@ -32,16 +32,6 @@ object PostObject {
         return postList
     }
 
-    fun personalImg(userName: String?): Post? {
-        for (post in postList) {
-            if (userName == post.user) {
-                return post
-            } else {
-                continue
-            }
-        }
-        return null
-    }
     fun personalPost(userName: String?, personalList: ArrayList<Post>): ArrayList<Post> {
         for (post in postList) {
             if (userName == post.user) {
@@ -61,6 +51,15 @@ object PostObject {
                 post.id = id
             }
         }
+    }
+
+    fun checkPost(userName :String): Boolean {
+        for (post in postList) {
+            if (post.user == userName) {
+                return true
+            }
+        }
+        return false
     }
 //    fun get
 }

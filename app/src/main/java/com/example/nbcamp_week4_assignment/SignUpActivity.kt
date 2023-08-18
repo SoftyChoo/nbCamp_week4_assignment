@@ -67,9 +67,7 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.check2), Toast.LENGTH_SHORT).show()
             }
             else {
-
-                UserObject.adduser(editID.text.toString(),editName.text.toString(),editPW.text.toString(),ImageUri.toString())
-
+                UserObject.adduser(editID.text.toString(),editName.text.toString(),editPW.text.toString(),"test")
                 Toast.makeText(this, getString(R.string.complete), Toast.LENGTH_SHORT).show()
                 finish()
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
