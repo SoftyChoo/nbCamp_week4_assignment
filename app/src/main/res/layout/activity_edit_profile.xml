@@ -21,19 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:background="@color/black" />
-
-            <Button
-                android:id="@+id/btnBg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignStart="@+id/imgBg"
-                android:layout_alignTop="@+id/imgBg"
-                android:layout_alignEnd="@+id/imgBg"
-                android:layout_alignBottom="@+id/imgBg"
-                android:layout_alignParentStart="true"
-                android:background="@android:color/transparent"
-                android:text="edit" />
+                android:background="#282828" />
 
             <ImageView
                 android:id="@+id/imgProfile"

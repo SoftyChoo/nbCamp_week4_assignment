@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.nbcamp_week4_assignment.DataClass.Post
@@ -33,6 +34,11 @@ class PostAdaptor(val context: Context,var postList: ArrayList<Post>) :BaseAdapt
         val tv_post_id = view.findViewById<TextView>(R.id.tv_post_id)
         val tv_post_name = view.findViewById<TextView>(R.id.tv_post_name)
         val tv_post_content = view.findViewById<TextView>(R.id.tv_post_content)
+        val btn_favorite = view.findViewById<Button>(R.id.btn_favorite)
+
+        btn_favorite.setOnClickListener {
+            btn_favorite?.isSelected = btn_favorite?.isSelected != true
+        }
 
         iv_post.clipToOutline = true
         iv_post_bg.clipToOutline = true

@@ -14,6 +14,15 @@
             android:layout_width="match_parent"
             android:layout_height="330dp">
 
+            <Button
+                android:id="@+id/btn_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_click_event"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <ImageView
                 android:id="@+id/iv_post"

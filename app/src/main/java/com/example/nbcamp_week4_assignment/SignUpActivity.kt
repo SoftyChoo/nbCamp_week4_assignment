@@ -39,6 +39,7 @@ class SignUpActivity : AppCompatActivity() {
                         ImageUri = it
                         imageselect.setImageURI(ImageUri)
                         btn_profile.text = null
+                        imageselect.clipToOutline = true
                     }
                 }
             }
