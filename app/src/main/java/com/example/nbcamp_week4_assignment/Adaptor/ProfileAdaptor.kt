@@ -33,7 +33,7 @@ class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>
 
             imageButton.setOnClickListener {
                 val intentToProfile = Intent(it.context,ProfileActivity::class.java)
-                intentToProfile.putExtra("name",textView.text.toString())
+                intentToProfile.putExtra("rv_name",textView.text.toString())
                 it.context.startActivity(intentToProfile)
                 (view.context as Activity).overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
             }
