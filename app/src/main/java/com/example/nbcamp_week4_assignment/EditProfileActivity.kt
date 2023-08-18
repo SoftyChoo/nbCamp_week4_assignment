@@ -14,6 +14,7 @@ import android.Manifest
 import android.widget.Button
 import android.widget.EditText
 import com.example.nbcamp_week4_assignment.Object.PostObject
+import com.example.nbcamp_week4_assignment.Object.UserObject
 import com.example.nbcamp_week4_assignment.Object.UserObject.editProfile
 
 class EditProfileActivity : AppCompatActivity() {
@@ -69,6 +70,7 @@ class EditProfileActivity : AppCompatActivity() {
             // 사용자 정보 수정 및 전달
             editProfile(imageUri.toString(), name, id,compareName)
             PostObject.editPostData(imageUri.toString(),name,id,compareName)
+            UserObject.addSignInUser(id)
 
             val Intent = Intent(this, ProfileActivity::class.java)
             Intent.putExtra("imageUri", imageUri)

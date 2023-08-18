@@ -22,7 +22,7 @@ class SignInActivity : AppCompatActivity() {
         btn1.setOnClickListener {//로그인
             if (UserObject.readusers(ID.text.toString(), Pass.text.toString())!=null) {
                 val intentMain = Intent(this, MainActivity::class.java)
-                intentMain.putExtra(ID.text.toString(),"userId")
+                UserObject.addSignInUser(ID.text.toString())//로그인값 가지고있기.
                 startActivity(intentMain)
                 Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show()
                 overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ListView
@@ -27,10 +28,17 @@ class ProfileActivity : AppCompatActivity() {
 
         img_profile.clipToOutline = true
 
-
         //recyclerView를 클릭했을 때 받아온 유저의 이름
-        var rv_userName = intent.getStringExtra("rv_name")
+        var rv_userName = intent.getStringExtra("rv_name").toString()
 
+        //SignIn한 유저의 프로필에서만 EditProfile버튼이 활성화되도록 설정
+        if(rv_userName == UserObject.signInUser){
+            btnEdit.visibility = View.VISIBLE
+        }
+        else
+        {
+            btnEdit.visibility = View.GONE
+        }
 
         //개인 postList 생성
         var personalList = arrayListOf<Post>()
@@ -78,6 +86,7 @@ class ProfileActivity : AppCompatActivity() {
             intenttoEditProfile.putExtra("rv_name",rv_userName)
             startActivity(intenttoEditProfile)
             overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
+            finish()
         }
         main_btn.setOnClickListener {
             val intenttoEditProfile = Intent(this, MainActivity::class.java)

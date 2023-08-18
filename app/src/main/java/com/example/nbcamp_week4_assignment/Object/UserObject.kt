@@ -11,7 +11,6 @@ object UserObject {
         User("@daeulzzang", "이다을", "222222",R.drawable.de.toString()),
         User("@hyyyjunk", "김현준", "333333",R.drawable.hj.toString()),
         User("@yhyang", "양윤혁", "444444",R.drawable.yh.toString())
-
     )
 
     fun adduser(id: String, name: String, pw: String, img: String)
@@ -57,7 +56,16 @@ object UserObject {
             }
         }
     }
-
-
+    //로그인값을 받아와서 가지고있다가 개인프로필에서 사용
+    var signInUser : String = ""
+    fun addSignInUser(userId : String){
+        for(user in users)
+        {
+            if(user.id == userId)
+            {
+                signInUser = user.name
+            }
+        }
+    }
 
 }
