@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.R
 
-class PostAdaptor(val context: Context,var postList: ArrayList<Post>) :BaseAdapter() {
+class PostAdaptor(val context: Context, var postList: ArrayList<Post>) : BaseAdapter() {
     override fun getCount(): Int {
         return postList.size
     }
@@ -47,8 +47,10 @@ class PostAdaptor(val context: Context,var postList: ArrayList<Post>) :BaseAdapt
         val post = postList[position]
 
 
-        val profile_resourceId = context.resources.getIdentifier(post.profile, "drawable", context.packageName)
-        val img_resourceId = context.resources.getIdentifier(post.img, "drawable", context.packageName)
+        val profile_resourceId =
+            context.resources.getIdentifier(post.profile, "drawable", context.packageName)
+        val img_resourceId =
+            context.resources.getIdentifier(post.img, "drawable", context.packageName)
         iv_post.setImageResource(profile_resourceId)
         iv_post_bg.setImageResource(img_resourceId)
         tv_post_id.text = post.id

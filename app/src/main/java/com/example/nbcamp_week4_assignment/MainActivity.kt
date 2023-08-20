@@ -1,33 +1,20 @@
 package com.example.nbcamp_week4_assignment
 
-import android.app.Activity
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbcamp_week4_assignment.Adaptor.PostAdaptor
 import com.example.nbcamp_week4_assignment.Adaptor.ProfileAdaptor
-import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.Object.PostObject
 import com.example.nbcamp_week4_assignment.Object.UserObject
-import com.example.nbcamp_week4_assignment.Object.UserObject.editProfile
-
 
 class MainActivity : AppCompatActivity() {
-    //로그인 한 User의 Id값을 가지고있기
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-//        val userId = intent.getStringExtra("userId")
-//        UserObject.addSignInUser(userId.toString())
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -53,12 +40,9 @@ class MainActivity : AppCompatActivity() {
         val postRecyclerView = findViewById<RecyclerView>(R.id.rv_profile_main)
 
         //RecyclerView 가로로 변환해주는 코드
-        postRecyclerView.layoutManager =LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
+        postRecyclerView.layoutManager =
+            LinearLayoutManager(this).also { it.orientation = LinearLayoutManager.HORIZONTAL }
         val adapter = ProfileAdaptor(this, userList)
         postRecyclerView.setAdapter(adapter)
     }
-//    fun getUserId(): String? {
-//        return userId
-//    }
-
 }

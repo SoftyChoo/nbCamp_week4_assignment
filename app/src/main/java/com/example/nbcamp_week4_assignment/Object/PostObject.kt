@@ -43,7 +43,7 @@ object PostObject {
         return personalList
     }
 
-    fun editPostData(imageUri: String, name: String, id: String,compareName:String) {
+    fun editPostData(imageUri: String, name: String, id: String, compareName: String) {
         for (post in postList) {
             if (post.user == compareName) {
                 post.profile = "test"
@@ -53,7 +53,7 @@ object PostObject {
         }
     }
 
-    fun checkPost(userName :String): Boolean {
+    fun checkPost(userName: String): Boolean {
         for (post in postList) {
             if (post.user == userName) {
                 return true
@@ -61,7 +61,8 @@ object PostObject {
         }
         return false
     }
-    fun addPostCheck(userName :String): Post? {
+
+    fun addPostCheck(userName: String): Post? {
         for (post in postList) {
             if (post.user == userName) {
                 return post

@@ -3,27 +3,22 @@ package com.example.nbcamp_week4_assignment.Adaptor
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nbcamp_week4_assignment.DataClass.Post
 import com.example.nbcamp_week4_assignment.DataClass.User
-import com.example.nbcamp_week4_assignment.MainActivity
 import com.example.nbcamp_week4_assignment.ProfileActivity
 import com.example.nbcamp_week4_assignment.R
+
 class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>) :
     RecyclerView.Adapter<ProfileAdaptor.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
-        val imageButton : ImageButton
+        val imageButton: ImageButton
 
         init {
             // Define click listener for the ViewHolder's View.
@@ -32,10 +27,13 @@ class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>
             imageButton.clipToOutline = true
 
             imageButton.setOnClickListener {
-                val intentToProfile = Intent(it.context,ProfileActivity::class.java)
-                intentToProfile.putExtra("rv_name",textView.text.toString())
+                val intentToProfile = Intent(it.context, ProfileActivity::class.java)
+                intentToProfile.putExtra("rv_name", textView.text.toString())
                 it.context.startActivity(intentToProfile)
-                (view.context as Activity).overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
+                (view.context as Activity).overridePendingTransition(
+                    android.R.anim.slide_in_left,
+                    android.R.anim.slide_out_right
+                )
             }
         }
     }
@@ -57,7 +55,8 @@ class ProfileAdaptor(val context: Context, private val userList: ArrayList<User>
         // contents of the view with that element
         viewHolder.textView.text = user.name
 
-        val resourceId = context.resources.getIdentifier(user.imageUri, "drawable", context.packageName)
+        val resourceId =
+            context.resources.getIdentifier(user.imageUri, "drawable", context.packageName)
         viewHolder.imageButton.setImageResource(resourceId)
 
     }

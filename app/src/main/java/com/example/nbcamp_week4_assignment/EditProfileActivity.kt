@@ -30,6 +30,7 @@ class EditProfileActivity : AppCompatActivity() {
                 openGallery()
             }
         }
+
     // 가져온 사진 보여주기
     private val pickImageLauncher: ActivityResultLauncher<Intent> =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -41,6 +42,7 @@ class EditProfileActivity : AppCompatActivity() {
                 }
             }
         }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
@@ -49,7 +51,11 @@ class EditProfileActivity : AppCompatActivity() {
         imageView.clipToOutline = true
         button = findViewById(R.id.btnProfile)
         button.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
                 openGallery()
             } else {
                 requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -67,8 +73,8 @@ class EditProfileActivity : AppCompatActivity() {
             val imageUri = imageUri
             var compareName = intent.getStringExtra("rv_name").toString()
             // 사용자 정보 수정 및 전달
-            editProfile(imageUri.toString(), name, id,compareName)
-            PostObject.editPostData(imageUri.toString(),name,id,compareName)
+            editProfile(imageUri.toString(), name, id, compareName)
+            PostObject.editPostData(imageUri.toString(), name, id, compareName)
             UserObject.addSignInUser(id)
 
             val Intent = Intent(this, ProfileActivity::class.java)
@@ -77,13 +83,14 @@ class EditProfileActivity : AppCompatActivity() {
             Intent.putExtra("id", id)
 
             startActivity(Intent)
-            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
         buttonCancel.setOnClickListener {
             finish()
-            overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right)
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
     }
+
     private fun openGallery() {
         val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         pickImageLauncher.launch(gallery)

@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.nbcamp_week4_assignment.Object.PostObject
-import com.example.nbcamp_week4_assignment.Object.UserObject
 
 class AddPostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,24 +22,25 @@ class AddPostActivity : AppCompatActivity() {
         val addPostUser = PostObject.addPostCheck(rv_userName)
 
         btn_save.setOnClickListener {
-            if(contentPost.text.isEmpty())
-            {
-                Toast.makeText(this,getString(R.string.information), Toast.LENGTH_SHORT).show()
-            }
-            else
-            {
+            if (contentPost.text.isEmpty()) {
+                Toast.makeText(this, getString(R.string.information), Toast.LENGTH_SHORT).show()
+            } else {
                 if (addPostUser != null) {
-                    PostObject.addPost(addPostUser.id, addPostUser.user,"noimg",addPostUser.profile,contentPost.text.toString())
+                    PostObject.addPost(
+                        addPostUser.id,
+                        addPostUser.user,
+                        "noimg",
+                        addPostUser.profile,
+                        contentPost.text.toString()
+                    )
                 }
-                val intentToProfile = Intent(this,ProfileActivity::class.java)
-                intentToProfile.putExtra("rv_name",rv_userName)
+                val intentToProfile = Intent(this, ProfileActivity::class.java)
+                intentToProfile.putExtra("rv_name", rv_userName)
                 startActivity(intentToProfile)
             }
         }
         btn_cancel.setOnClickListener {
             finish()
         }
-
-
     }
 }
