@@ -6,4 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".EditProfileActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:id="@+id/imgBg"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="#282828"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/round_backgroud_profile"
+                android:scaleType="centerCrop" />
+
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/imgProfile"
+                android:layout_alignTop="@+id/imgProfile"
+                android:layout_alignEnd="@+id/imgProfile"
+                android:layout_alignBottom="@+id/imgProfile"
+                android:background="@android:color/transparent"
+                android:text="edit" />
+
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/box_border"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            android:padding="15dp" />
+
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/box_border"
+            android:ems="10"
+            android:hint="ID"
+            android:inputType="text"
+            android:padding="15dp" />
+
+        <Button
+            android:id="@+id/button_edit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btn_shape"
+            android:text="@string/update"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_whtite"
+            android:text="@string/cancel" />
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
