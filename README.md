@@ -13,10 +13,10 @@
 | 이름   | 역할 | MBTI        | BLOG                                        |
 | ------ | ---- | ----------- | ------------------------------------------- |
 | 추민수 | 팀장 | ENFJ        | [바로가기!](softychoo.github.io)            |
-| 이다을 | 팀원 | ENTJ        | [바로가기!]([https://velog.io/@thundevistan](https://velog.io/@ouowinnie)) |
-| 이진혁 | 팀원 | INFJ        | [바로가기!]([https://velog.io/@minjii](https://velog.io/@jh4016))   |
-| 김현준 | 팀원 | ISFP        | [바로가기!]([https://velog.io/@hyunjun6133](https://velog.io/@boomshh))  |
-| 양윤혁 | 팀원 | ESTJ        | [바로가기!]([https://velog.io/@playerkr](https://yangdriod.tistory.com/))  |
+| 이다을 | 팀원 | ENTJ        | [바로가기!](https://velog.io/@thundevistan](https://velog.io/@ouowinnie)) |
+| 이진혁 | 팀원 | INFJ        | [바로가기!](https://velog.io/@minjii](https://velog.io/@jh4016))   |
+| 김현준 | 팀원 | ISFP        | [바로가기!](https://velog.io/@hyunjun6133](https://velog.io/@boomshh))  |
+| 양윤혁 | 팀원 | ESTJ        | [바로가기!](https://velog.io/@playerkr](https://yangdriod.tistory.com/))  |
 
 <br/><br/>
 
